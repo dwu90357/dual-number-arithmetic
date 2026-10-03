@@ -1,0 +1,14 @@
+[project]
+name = "dual-number-arithmetic"
+version = "0.1.0"
+description = "Performs exact forward-mode automatic differentiation on scalar functions using dual numbers built on tuples."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
