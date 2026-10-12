@@ -42,3 +42,10 @@ Operators supported on `Dual`: `+`, `-`, `*`, `/`, `//`, `%`, `**`, unary `-`, `
 `**` with a `Dual` exponent whose derivative is nonzero requires a strictly positive base (so `log` is defined). `0 ** 0` and `0 ** negative` raise `ValueError`.
 
 Booleans are rejected as operands despite `bool` being a subtype of `int`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
